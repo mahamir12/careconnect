@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareConnect - Home Healthcare Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto p-4 flex flex-col md:flex-row justify-between items-center">
+      <div class="text-2xl font-bold text-blue-800">CareConnect</div>
+      <p class="text-sm text-gray-600 mt-1">From students of Air University 💙</p>
+      <div class="text-sm text-gray-600 mt-2 md:mt-0">
+        📍 AUSOM, Air University, Islamabad | 📞 +92 (300) 000-000 | ✉️ contact@careconnect.com
+      </div>
+    </div>
+  </header>
+  
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-100 via-blue-200 to-blue-100 py-16 text-center">
+    <h1 class="text-5xl font-extrabold text-blue-900 mb-4 drop-shadow-md">Trusted Home Healthcare Services</h1>
+    <p class="text-lg text-blue-800 mb-6">Bringing compassionate medical care to your doorstep, 24/7</p>
+    <div class="flex justify-center gap-4">
+     
+      <!-- <a href="#" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 transition">Book a Service</a> -->
+      <a href="booking.html" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 transition">Book a Service</a>
+      <a href="provider-register.html" class="bg-white border border-blue-700 text-blue-700 px-6 py-3 rounded-xl font-semibold hover:bg-blue-100 transition">Register as a Provider</a>
+
+      <!-- <a href="#" class="bg-white border border-blue-700 text-blue-700 px-6 py-3 rounded-xl font-semibold hover:bg-blue-100 transition">Register as a Provider</a> -->
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-14 max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-blue-900 mb-10">Our Core Services</h2>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Individual Service Cards -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">🩺 Nursing Care</h3>
+        <p>Skilled nurses for wound care, post-op support, chronic illness management & more.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">💉 Injection Services</h3>
+        <p>Hygienic IV, IM, and SC injections by certified professionals at home.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">👵 Elderly Care</h3>
+        <p>Compassionate caregiving for seniors, including mobility and medication assistance.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">🚚 Medicine Delivery</h3>
+        <p>All prescribed medications delivered safely and on time to your home.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">👨‍⚕️ Doctor Home Visits</h3>
+        <p>Experienced physicians available for home consultations and follow-ups.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">🧪 Lab Tests at Home</h3>
+        <p>Diagnostics like blood & urine tests collected from your home by lab techs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages Section -->
+  <section class="bg-gray-100 py-14 px-4">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-blue-900 mb-10">Health Packages</h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold mb-2">🏠 Basic Home Care</h3>
+          <p>Weekly nurse visits, vitals check, and medicine delivery. <br> <strong>PKR 2,999/month</strong></p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold mb-2">💙 Senior Wellness Plan</h3>
+          <p>Daily elderly care, doctor checkups, physiotherapy, and medicine. <br> <strong>PKR 7,999/month</strong></p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold mb-2">🏥 Post-Surgery Recovery</h3>
+          <p>Daily nurse, wound dressing, injections, and mobility care. <br> <strong>PKR 9,999/month</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Success Modal -->
+<div id="successModal" class="fixed inset-0 bg-black bg-opacity-40 hidden items-center justify-center z-50">
+    <div class="bg-white p-8 rounded-2xl shadow-lg text-center max-w-sm w-full">
+      <h2 class="text-2xl font-bold text-green-600 mb-4">🎉 Registration Successful!</h2>
+      <p class="text-gray-700 mb-6">Thank you for joining CareConnect. We'll contact you soon!</p>
+      <button onclick="goHome()" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 transition">Go to Home</button>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <section class="py-16 bg-blue-600 text-white text-center">
+    <h2 class="text-3xl font-bold mb-4">Need Help Choosing a Service?</h2>
+    <p class="mb-6 text-lg">Call us now for a free consultation or book a service online.</p>
+    <a href="#" class="inline-block bg-white text-blue-700 px-8 py-3 font-semibold rounded-xl hover:bg-gray-100 transition">📞 +92 - 300-000-0000</a>
+  </section>
+  <script>
+    const form = document.querySelector('form');
+    const modal = document.getElementById('successModal');
+  
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+  
+    function goHome() {
+      window.location.href = "index.html"; // Redirect to home
+    }
+  </script>
+  
+  <!-- Footer -->
+  <footer class="bg-white py-8 border-t text-center text-sm text-gray-600">
+    <div class="max-w-7xl mx-auto">
+      <p>© 2025 CareConnect Healthcare. All rights reserved.</p>
+      <p>📍 AUSOM, Air University, Islamabad | ✉️ contact@careconnect.com</p>
+      <p class="mt-2">Follow us:
+        <a href="#" class="text-blue-600 hover:underline mx-1">Facebook</a> |
+        <a href="#" class="text-blue-600 hover:underline mx-1">Instagram https://www.instagram.com/invites/contact/?igsh=14qbe544zos6x&utm_content=y6lged6</a> |
+        <a href="#" class="text-blue-600 hover:underline mx-1">LinkedIn</a>
+      </p>
+      <p class="mt-4 italic text-gray-500">From students of Air University 💙</p>
+    </div>
+  </footer>
+
+</body>
+</html>
