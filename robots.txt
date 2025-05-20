@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mahamir12.github.io/careconnect/sitemap.xml
