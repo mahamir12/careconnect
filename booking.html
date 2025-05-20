@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book a Service - CareConnect</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7430840079422900"
+     crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Header (reuse same as Home page) -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto p-4 flex flex-col md:flex-row justify-between items-center">
+      <div class="text-2xl font-bold text-blue-800">CareConnect</div>
+      <div class="text-sm text-gray-600 mt-2 md:mt-0">
+        📍 AUSOM, Air University, Islamabad | 📞 +92 (300) 000-000 | ✉️ contact@careconnect.com
+      </div>
+    </div>
+  </header>
+
+  <!-- Booking Form -->
+  <section class="py-16 px-4">
+    <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+      <h1 class="text-3xl font-bold text-center text-blue-900 mb-8">Book a Healthcare Service</h1>
+      
+      <form class="space-y-6">
+        
+        <!-- Name -->
+        <div>
+          <label class="block mb-2 font-semibold">Full Name</label>
+          <input type="text" placeholder="Your Name" class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+        </div>
+
+        <!-- Phone -->
+        <div>
+          <label class="block mb-2 font-semibold">Phone Number</label>
+          <input type="tel" placeholder="+92..." class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="block mb-2 font-semibold">Email Address</label>
+          <input type="email" placeholder="example@email.com" class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </div>
+
+        <!-- Service Selection -->
+        <div>
+          <label class="block mb-2 font-semibold">Select Service</label>
+          <select class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+            <option disabled selected>Choose a service</option>
+            <option>Nursing Care</option>
+            <option>Injection Services</option>
+            <option>Elderly Care</option>
+            <option>Medicine Delivery</option>
+            <option>Doctor Home Visit</option>
+            <option>Lab Tests at Home</option>
+          </select>
+        </div>
+
+        <!-- Address -->
+        <div>
+          <label class="block mb-2 font-semibold">Address</label>
+          <textarea placeholder="Your full address" class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required></textarea>
+        </div>
+
+        <!-- Date and Time -->
+                <!-- Preferred Date -->
+        <div>
+            <label class="block mb-2 font-semibold">Preferred Date</label>
+            <input type="date" class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+        </div>
+        
+        <!-- Preferred Time -->
+        <!-- Preferred Time -->
+        <div class="mt-4">
+            <label class="block mb-2 font-semibold">Preferred Time</label>
+            <input 
+            type="time" 
+            class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-700"
+            required
+            >
+        </div>
+  
+        <!-- Submit -->
+        <div class="text-center">
+          <button type="submit" class="bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
+            Confirm Booking
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white py-8 border-t text-center text-sm text-gray-600">
+    <div class="max-w-7xl mx-auto">
+      <p>© 2025 CareConnect Healthcare. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submit for now
+      if (confirm("🎉 Booking Submitted Successfully!\n\nDo you want to go back to Home Page?")) {
+        window.location.href = "index.html"; // send user back to Home Page
+      } else {
+        // do nothing, stay on booking page
+      }
+    });
+  </script>
+  
+</body>
+</html>
