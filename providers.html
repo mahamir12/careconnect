@@ -1,4 +1,3 @@
-<!-- providers.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,55 +6,45 @@
   <title>Registered Providers - CareConnect</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-100 text-gray-800 font-sans">
 
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
-      <div class="text-2xl font-bold text-blue-800">CareConnect</div>
+      <h1 class="text-2xl font-bold text-blue-800">Registered Providers</h1>
       <a href="index.html" class="text-sm text-blue-700 hover:underline">← Back to Home</a>
     </div>
   </header>
 
-  <section class="py-12 px-4">
+  <section class="py-8 px-4">
     <div class="max-w-5xl mx-auto">
-      <h1 class="text-3xl font-bold text-center text-blue-900 mb-8">Registered Healthcare Providers</h1>
-      
-      <!-- Table of Providers -->
-      <div class="overflow-x-auto">
-        <table class="min-w-full bg-white shadow-md rounded-xl overflow-hidden">
-          <thead class="bg-blue-700 text-white">
-            <tr>
-              <th class="text-left px-6 py-4">Name</th>
-              <th class="text-left px-6 py-4">Profession</th>
-              <th class="text-left px-6 py-4">Experience</th>
-              <th class="text-left px-6 py-4">Location</th>
-              <th class="text-left px-6 py-4">Contact</th>
-            </tr>
-          </thead>
-          <tbody id="providerTable" class="text-gray-700 divide-y divide-gray-200">
-            <!-- JS will inject rows here -->
-          </tbody>
-        </table>
-      </div>
+      <div id="providerList" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
     </div>
   </section>
 
   <script>
-    // Example static list — replace with actual dynamic storage (localStorage, API, etc.)
     const providers = JSON.parse(localStorage.getItem("careconnectProviders")) || [];
 
-    const tbody = document.getElementById('providerTable');
-    providers.forEach(p => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td class="px-6 py-4">${p.name}</td>
-        <td class="px-6 py-4">${p.profession}</td>
-        <td class="px-6 py-4">${p.experience} years</td>
-        <td class="px-6 py-4">${p.location}</td>
-        <td class="px-6 py-4">${p.phone}<br>${p.email}</td>
-      `;
-      tbody.appendChild(row);
-    });
+    const providerList = document.getElementById("providerList");
+
+    if (providers.length === 0) {
+      providerList.innerHTML = `<p class="text-center col-span-full text-gray-600">No providers registered yet.</p>`;
+    } else {
+      providers.forEach((provider) => {
+        const card = document.createElement("div");
+        card.className = "bg-white p-5 rounded-lg shadow border border-blue-100";
+
+        card.innerHTML = `
+          <h2 class="text-xl font-bold text-blue-800 mb-2">${provider.name}</h2>
+          <p><strong>Profession:</strong> ${provider.profession}</p>
+          <p><strong>Experience:</strong> ${provider.experience} years</p>
+          <p><strong>Location:</strong> ${provider.location}</p>
+          <p><strong>Phone:</strong> ${provider.phone}</p>
+          <p><strong>Email:</strong> ${provider.email}</p>
+        `;
+
+        providerList.appendChild(card);
+      });
+    }
   </script>
 
 </body>
