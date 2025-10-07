@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard - CareConnect</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-gray-100 p-6">
-  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
+  <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl p-8">
     <h1 class="text-3xl font-bold text-blue-700 mb-6">Welcome to Admin Dashboard</h1>
     
-    <div class="grid grid-cols-2 gap-4">
+    <!-- Statistics Cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
       <div class="bg-blue-50 p-4 rounded-xl text-center">
         <h2 class="text-xl font-semibold text-blue-800">Total Bookings</h2>
         <p class="text-3xl font-bold mt-2">24</p>
@@ -32,9 +35,78 @@
       </div>
     </div>
 
+    <!-- Charts Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Bar Chart -->
+      <div class="bg-gray-50 p-4 rounded-xl shadow">
+        <h2 class="text-lg font-semibold text-gray-700 mb-2">Monthly Bookings</h2>
+        <canvas id="bookingChart"></canvas>
+      </div>
+
+      <!-- Pie Chart -->
+      <div class="bg-gray-50 p-4 rounded-xl shadow">
+        <h2 class="text-lg font-semibold text-gray-700 mb-2">Nurse Availability</h2>
+        <canvas id="nurseChart"></canvas>
+      </div>
+    </div>
+
     <div class="mt-6 text-right">
       <a href="admin-login.html" class="text-blue-600 hover:underline">Logout</a>
     </div>
   </div>
+
+  <!-- Chart Scripts -->
+  <script>
+    // Bar Chart - Monthly Bookings
+    const ctx1 = document.getElementById('bookingChart');
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Bookings',
+          data: [4, 6, 5, 8, 10, 12],
+          backgroundColor: 'rgba(37, 99, 235, 0.6)',
+          borderColor: 'rgba(37, 99, 235, 1)',
+          borderWidth: 1,
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // Pie Chart - Nurse Availability
+    const ctx2 = document.getElementById('nurseChart');
+    new Chart(ctx2, {
+      type: 'pie',
+      data: {
+        labels: ['Available', 'On Duty', 'On Leave'],
+        datasets: [{
+          data: [7, 3, 2],
+          backgroundColor: [
+            'rgba(34, 197, 94, 0.7)',
+            'rgba(59, 130, 246, 0.7)',
+            'rgba(239, 68, 68, 0.7)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
